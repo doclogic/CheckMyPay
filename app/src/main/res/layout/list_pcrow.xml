@@ -1,0 +1,45 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/lcDate"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:textColor="@drawable/list_item_color"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/lcNum"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="viewEnd"
+        android:textColor="@drawable/list_item_color"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/lcAmt"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="viewEnd"
+        android:textColor="@drawable/list_item_color"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/lcbDate"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="viewEnd"
+        android:textColor="@drawable/list_item_color"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/lceDate"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="viewEnd"
+        android:textColor="@drawable/list_item_color"
+        android:textSize="15sp" />
+
+</LinearLayout>

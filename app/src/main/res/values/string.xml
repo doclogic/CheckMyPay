@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CheckMyPay version 1.12</string>
+    <string name="app_label">CheckMyPay 1.12</string>
+    <string name="activity_label">CMP 1.12</string>
+    <!-- widget -->
+    <string name="compose_shortcut_short_label1">cssl1</string>
+    <string name="compose_shortcut_long_label1">long</string>
+    <string name="compose_disabled_message1">dis</string>
+    <string name="appwidget_text">Tracker</string>
+    <string name="add_widget">Add widget</string>
+    <!-- text of menu items -->
+    <string name="action_break">Break</string>
+    <string name="action_exit">Exit</string>
+    <string name="action_quit">Quit</string>
+    <string name="entry_menu">Entry</string>
+    <string name="entry_tot">Total Time</string>
+    <string name="entry_code">Job Codes</string>
+    <string name="entry_insert">Insert</string>
+    <string name="entry_shup">Move Up</string>
+    <string name="entry_del">Delete</string>
+    <string name="entry_clear">Clear all</string>
+    <string name="entry_edit">Edit</string>
+    <string name="entry_cdiv">Divisor</string>
+    <string name="file_menu">File</string>
+    <string name="file_period">End current time period</string>
+    <string name="file_load">Load other</string>
+    <string name="file_save">Save</string>
+    <string name="file_checks">Checks</string>
+    <string name="file_TE">Text Edit</string>
+    <string name="file_clear">Clear current</string>
+    <string name="file_reset">Reset master file</string>
+    <!-- text of messages -->
+    <string name="m_entry_deleted">Deleted - </string>
+    <string name="gpd">goto parent directory</string>
+    <string name="delsel">delete selected</string>
+    <!-- text of filenames -->
+    <string name="f_gloName">timeGlobals.txt</string>
+    <string name="f_defName">timeTable.txt</string>
+    <string name="f_tempName">timeTemp.txt</string>
+    <string name="f_tempTxtName">textTemp.txt</string>
+    <string name="f_chkName">checks.txt</string>
+    <!-- text of stamp key identifiers -->
+    <string name="rate">Rate</string>
+    <string name="adj">Adj</string>
+    <string name="in">In</string>
+    <string name="out">Out</string>
+    <string name="break_str">Break</string>
+    <string name="brst">(start)</string>
+    <string name="brendt">(end)</string>
+    <string name="tip">Tip</string>
+    <string name="tipcash">Cash</string>
+    <string name="sales">Sales</string>
+    <string name="gross">Gross</string>
+    <!-- text of buttons -->
+    <string name="b_punchin">Punch In</string>
+    <string name="b_brkst">Break start</string>
+    <string name="b_brkend">Break end</string>
+    <string name="b_punchout">Punch Out</string>
+    <string name="b_jobadd">Add</string>
+    <string name="b_exit">Exit</string>
+    <string name="b_addblank">Add</string>
+    <string name="b_arrow_down">↡</string>
+    <string name="b_arrow_up">↟</string>
+    <string name="b_select">Select</string>
+    <string name="b_save">Save</string>
+    <string name="b_done">Done</string>
+    <string name="b_detail">Detail</string>
+    <!-- text of hints in XML files -->
+    <string name="h_jcView">code</string>
+    <string name="h_jnView">description</string>
+    <string name="h_jrView">rate</string>
+    <string name="h_date_time">date-time</string>
+    <string name="h_message">message</string>
+    <string name="h_mult">multiplier</string>
+    <string name="h_dir">dir</string>
+    <string name="h_filename">file name</string>
+    <string name="h_text">text</string>
+    <string name="h_chdate">check date</string>
+    <string name="h_chnum">check #</string>
+    <string name="h_chamt">amount</string>
+    <string name="h_stdate">start date</string>
+    <string name="h_enddate">end date</string>
+    <string name="h_TCard">TCard</string>
+    <!-- text of  -->
+    <string name="prompt">Prompt</string>
+    <string name="tot_separator">*</string>
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <item android:id="@+id/entry_menu"
+        android:title="@string/entry_menu"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/entry_tot"
+                android:title="@string/entry_tot" />
+            <item android:id="@+id/entry_code"
+                android:title="@string/entry_code" />
+            <item android:id="@+id/entry_insert"
+                android:title="@string/entry_insert" />
+            <item android:id="@+id/entry_shup"
+                android:title="@string/entry_shup" />
+            <item android:id="@+id/entry_del"
+                android:title="@string/entry_del" />
+            <item android:id="@+id/entry_clear"
+                android:title="@string/entry_clear" />
+            <item android:id="@+id/entry_edit"
+                android:title="@string/entry_edit" />
+        </menu>
+    </item>
+</menu>
