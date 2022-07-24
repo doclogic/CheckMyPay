@@ -13,7 +13,7 @@ import android.util.Log;
 import android.widget.*;
 
 public class FileOperations {
-    private class fViewHolder {
+    private static class fViewHolder {
         TextView text;
     }
     public int fIX=-1;

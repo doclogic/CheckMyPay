@@ -11,21 +11,25 @@ package com.cjg.CheckMyPay;
 // ver 1.10 lineItem stamp now Date not String
 // ver 1.11 Check details development
 // 2022/07/20 ver 1.12 Update to newer androids / compile rebuild newer versions SDK / code cleanup
-// 2022/07/23 ver 1.12 no lomger cjg.paycheck package now com.cjg.CheckMyPay
+// 2022/07/23 ver 1.12 no longer cjg.paycheck package now com.cjg.CheckMyPay
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.DialogInterface;
+
 import android.os.Bundle;
 import android.os.Environment;
+
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
@@ -38,8 +42,10 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -181,14 +187,29 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
+        setContentView(layout.activity_load);
         assert F_SEP != null;  //gotta have something
-        if (sla == null) sla = new StampListAdapter();
-        if (cla == null) cla = new CodeListAdapter();
-        if (fla == null) fla = new FileListAdapter();
-        if (fop == null) fop = new FileOperations();
-        if (pla == null) pla = new PCListAdapter();
-        if (cdla == null) cdla = new PdListAdapter();
+        TextView Stat_v = findViewById(Status_Line);
+        Stat_v.setText("Status_Line");
+
+        if (sla == null) {
+            Stat_v.setText("Loading Time Stamp data..."); sla = new StampListAdapter();
+        }
+        if (cla == null) {
+            Stat_v.setText("Loading Code List..."); cla = new CodeListAdapter();
+        }
+        if (fla == null) {
+            Stat_v.setText("Loading file list..."); fla = new FileListAdapter();
+        }
+        if (fop == null) {
+            Stat_v.setText("File Operations init..."); fop = new FileOperations();
+        }
+        if (pla == null) {
+            Stat_v.setText("PC list"); pla = new PCListAdapter();
+        }
+        if (cdla == null) {
+            Stat_v.setText("pd list"); cdla = new PdListAdapter();
+        }
         curFileDir = getFilesDir().toString();
         curObbDir = getObbDir().toString();
         curDataDir = "x"; //getDataDir().toString();
@@ -213,20 +234,19 @@ public class MainActivity extends AppCompatActivity {
                 setContentView(layout.text_editor);
                 EdTxt_v = findViewById(textBox);
                 EdTxt_v.setText(fop.read(tempfile));
-                d = new File(tempfile);
-                d.delete();
+                new File(tempfile).delete();
             }
         }
-        if (pla.size() < 1)
+        if (pla.size() < 1)         //If nothing there, go load it up...
             rdChecks();
-        if (curFile.length() < 1)
+        if (curFile.length() < 1)       //If no file set, build it...
             curFile = curFileDir + F_SEP + getString(string.f_defName);
-        if (sla.size() < 1)
-            rdTime(curFile);              //try load if data not already there
+        if (sla.size() < 1)         //If nothing there, go load it up...
+            rdTime(curFile);              //try load
         if ((dMode & DM_FILE) > 0)                          //still in file select mode
             selectFile("Select", curFile);         //return to file select
         else
-            switch (dMode) {
+            switch (dMode) {            //Set to current display mode
                 case DM_TIME: disTime();    break;
                 case DM_TOTS: disTot();     break;
                 case DM_TEXT: disTxtEd();   break;
@@ -243,7 +263,7 @@ public class MainActivity extends AppCompatActivity {
 //onPause() onStop() onDestroy()
 
     @Override
-    public void onSaveInstanceState(Bundle outState) {
+    public void onSaveInstanceState(@NonNull Bundle outState) {
 //        simpleToast("save instance", 0);
         super.onSaveInstanceState(outState);
         outState.putInt("stix", stix);
@@ -394,8 +414,6 @@ public class MainActivity extends AppCompatActivity {
         dMode = DM_EDIT;
     }
     public void edDoneButton(View view) {       //Single entry edit done
-
-
         DateFormat dfmt=new SimpleDateFormat("yyyy/MM/dd hh:mma", Locale.US);
         kbSet(false);
         if ((stix > -1) && (stix < sla.size())) {
@@ -617,9 +635,9 @@ public class MainActivity extends AppCompatActivity {
         vpdHrs = findViewById(pdHrs);
         vpdAmt = findViewById(pdAmt);
         r.text = vpdText.getText().toString();
-        r.rate = valueOf(vpdRate.getText().toString());
-        r.hrs = valueOf(vpdHrs.getText().toString());
-        r.amt = valueOf(vpdAmt.getText().toString());
+        r.rate = Double.parseDouble(vpdRate.getText().toString());
+        r.hrs = Double.parseDouble(vpdHrs.getText().toString());
+        r.amt = Double.parseDouble(vpdAmt.getText().toString());
         return r;
     }
     public void pdSaveButton(View view) {
