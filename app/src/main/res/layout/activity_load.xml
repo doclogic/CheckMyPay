@@ -7,11 +7,32 @@
 
     <TextView
         android:id="@+id/Status_Line"
-        android:layout_width="326dp"
-        android:layout_height="91dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="322dp"
+        android:layout_height="59dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/app_name" />
+
+    <TextView
+        android:id="@+id/Stat2"
+        android:layout_width="304dp"
+        android:layout_height="43dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="28dp"
+        android:text="TextView"
+        app:layout_constraintTop_toBottomOf="@+id/Status_Line"
+        app:layout_constraintBottom_toTopOf="@id/Stat3"
+        />
+    <TextView
+        android:id="@+id/Stat3"
+        android:layout_width="304dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="28dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Stat2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

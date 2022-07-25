@@ -187,12 +187,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(layout.activity_load);
         assert F_SEP != null;  //gotta have something
+        setContentView(layout.activity_load);
         TextView Stat_v = findViewById(Status_Line);
         Stat_v.setText("Status_Line");
-
         if (sla == null) {
+            Stat_v = findViewById(Stat2);
             Stat_v.setText("Loading Time Stamp data..."); sla = new StampListAdapter();
         }
         if (cla == null) {
@@ -519,13 +519,19 @@ public class MainActivity extends AppCompatActivity {
         dMode = DM_CHK;
     }
     public void pcTimeButton(View view) {
-        pit = pla.get(pcix);
-        String t = curObbDir+F_SEP+"T"+ sortableDate(pit.perEnd)+".txt";
-        File f = new File( t );
+        String t="";
+        if (pcix < 1) {
+            t="none"; }
+        else {
+            pit = pla.get(pcix);
+            t = curObbDir + F_SEP + "T" + sortableDate(pit.perEnd) + ".txt";
+        }
+        File f = new File(t);
         if (f.exists())
             curFile = t;
         else
             curFile = curFileDir + F_SEP + getString(string.f_defName);
+
         sla.clear();
         stix = -1;
         rdTime(curFile);
