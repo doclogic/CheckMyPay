@@ -20,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 
@@ -186,40 +187,52 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+//        TextView Stat_v, Stat2_v, Stat3_v;
         super.onCreate(savedInstanceState);
         assert F_SEP != null;  //gotta have something
-        setContentView(layout.activity_load);
-        TextView Stat_v = findViewById(Status_Line);
-        Stat_v.setText("Status_Line");
+/*        setContentView(layout.activity_load);
+        Stat_v = findViewById(Status_Line);
+        Stat_v.setText("Status_Line"); */
         if (sla == null) {
-            Stat_v = findViewById(Stat2);
-            Stat_v.setText("Loading Time Stamp data..."); sla = new StampListAdapter();
+//            Stat_v = findViewById(Stat2);
+//            Stat_v.setText("Loading Time Stamp data...");
+            sla = new StampListAdapter();
         }
         if (cla == null) {
-            Stat_v.setText("Loading Code List..."); cla = new CodeListAdapter();
+//          Stat_v.setText("Loading Code List...");
+            cla = new CodeListAdapter();
         }
         if (fla == null) {
-            Stat_v.setText("Loading file list..."); fla = new FileListAdapter();
+//            Stat_v.setText("Loading file list...");
+            fla = new FileListAdapter();
         }
         if (fop == null) {
-            Stat_v.setText("File Operations init..."); fop = new FileOperations();
+//            Stat_v.setText("File Operations init...");
+            fop = new FileOperations();
         }
         if (pla == null) {
-            Stat_v.setText("PC list"); pla = new PCListAdapter();
+//            Stat_v.setText("PC list");
+            pla = new PCListAdapter();
         }
         if (cdla == null) {
-            Stat_v.setText("pd list"); cdla = new PdListAdapter();
+//            Stat_v.setText("pd list");
+            cdla = new PdListAdapter();
         }
+//        Stat2_v = findViewById(Stat2);
+//        Stat3_v = findViewById(Stat3);
         curFileDir = getFilesDir().toString();
         curObbDir = getObbDir().toString();
         curDataDir = "x"; //getDataDir().toString();
         curPubDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS).toString();
+//        Stat2_v.setText(curFileDir);
+//        Stat3_v.setText(curDataDir);
 /*		Map<String,String> emap;
 		emap = System.getenv();
 		simpleToast(emap,1);
         getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS); */
         rdGlobal();
-        dMode = DM_CHK;         ///start with check list list
+        if (pla.size()>0)  dMode = DM_CHK;
+        else dMode = DM_TIME;   //Show time if check empty
         if (savedInstanceState != null) {
 //            simpleToast("Restore Instance", 1);
             tempfile = curFileDir + F_SEP + getString(string.f_tempName);
@@ -290,7 +303,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         switch (id) {
@@ -323,7 +335,6 @@ public class MainActivity extends AppCompatActivity {
     public void disMain() {
         setContentView(layout.activity_main);
         new TextClock(this);
-
     }
     /***TIME DISPLAY***********************************************************************************/
     private void disTime() {
@@ -583,7 +594,7 @@ public class MainActivity extends AppCompatActivity {
         r.perBeg = toDate(pbDate.getText().toString());
         r.perEnd = toDate(peDate.getText().toString());
         String amt = pAmt.getText().toString();
-        if (!amt.equals("")) r.chkAmt = valueOf(amt); else r.chkAmt = 0.0;
+        if (!amt.equals("")) r.chkAmt = Double.parseDouble(amt); else r.chkAmt = 0.0;
         r.chkNum = pNum.getText().toString().trim();
         return r;
     }

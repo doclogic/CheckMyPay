@@ -3,36 +3,88 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:menu="@menu/menu_main">
 
     <TextView
         android:id="@+id/Status_Line"
-        android:layout_width="322dp"
-        android:layout_height="59dp"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="36dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/app_name" />
 
     <TextView
         android:id="@+id/Stat2"
-        android:layout_width="304dp"
+        android:layout_width="0dp"
         android:layout_height="43dp"
+        android:layout_marginTop="28dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@id/Stat3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="28dp"
-        android:text="TextView"
-        app:layout_constraintTop_toBottomOf="@+id/Status_Line"
-        app:layout_constraintBottom_toTopOf="@id/Stat3"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/Status_Line" />
+
     <TextView
         android:id="@+id/Stat3"
-        android:layout_width="304dp"
+        android:layout_width="0dp"
         android:layout_height="43dp"
         android:layout_marginTop="28dp"
         android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Stat2" />
+
+    <Button
+        android:id="@+id/main_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="disMain"
+        android:text="Main"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Stat3" />
+
+    <Button
+        android:id="@+id/tot_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="disTot"
+        android:text="Total"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/time_btn" />
+
+    <Button
+        android:id="@+id/time_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="disTime"
+        android:text="Time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_btn" />
+
+    <Button
+        android:id="@+id/enrty_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="disEd"
+        android:text="Entry"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tot_btn" />
+
+    <Button
+        android:id="@+id/Ex_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="appExit"
+        android:text="@string/action_exit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

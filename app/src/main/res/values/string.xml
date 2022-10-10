@@ -53,10 +53,10 @@
     <string name="sales">Sales</string>
     <string name="gross">Gross</string>
     <!-- text of buttons -->
-    <string name="b_punchin">Punch In</string>
-    <string name="b_brkst">Break start</string>
-    <string name="b_brkend">Break end</string>
-    <string name="b_punchout">Punch Out</string>
+    <string name="b_punchin">Time In</string>
+    <string name="b_brkst">Go Brk</string>
+    <string name="b_brkend">Brk end</string>
+    <string name="b_punchout">Time Out</string>
     <string name="b_jobadd">Add</string>
     <string name="b_exit">Exit</string>
     <string name="b_addblank">Add</string>

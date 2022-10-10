@@ -25,66 +25,71 @@
     <EditText
         android:id="@+id/cDate"
         android:layout_width="110dp"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:hint="@string/h_chdate"
         android:importantForAutofill="no"
         android:inputType="date"
+        android:textColorHint="#757575"
         app:layout_constraintBottom_toTopOf="@id/cbDate"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/cNum"
         android:layout_width="80dp"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:hint="@string/h_chnum"
         android:importantForAutofill="no"
         android:inputType="text"
+        android:textColorHint="#757575"
         app:layout_constraintBottom_toTopOf="@id/ceDate"
         app:layout_constraintStart_toEndOf="@id/cDate" />
 
     <EditText
         android:id="@+id/cAmt"
         android:layout_width="80dp"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:hint="@string/h_chamt"
         android:importantForAutofill="no"
         android:inputType="numberDecimal"
+        android:textColorHint="#757575"
         app:layout_constraintBottom_toTopOf="@id/ceDate"
         app:layout_constraintStart_toEndOf="@id/cNum" />
 
     <EditText
         android:id="@+id/cbDate"
         android:layout_width="110dp"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:hint="@string/h_stdate"
         android:importantForAutofill="no"
         android:inputType="date"
+        android:textColorHint="#757575"
         app:layout_constraintBottom_toTopOf="@id/pcAddButton"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/ceDate"
         android:layout_width="110dp"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:hint="@string/h_enddate"
         android:importantForAutofill="no"
         android:inputType="date"
+        android:textColorHint="#757575"
         app:layout_constraintBottom_toTopOf="@id/pcTimeButton"
         app:layout_constraintStart_toEndOf="@id/cbDate" />
 
     <Button
         android:id="@+id/pcAddButton"
-        android:layout_width="wrap_content"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
@@ -95,7 +100,7 @@
 
     <Button
         android:id="@+id/pcTimeButton"
-        android:layout_width="wrap_content"
+        android:layout_width="83dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
@@ -117,7 +122,7 @@
 
     <Button
         android:id="@+id/pcExitButton"
-        android:layout_width="wrap_content"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
@@ -128,7 +133,7 @@
 
     <Button
         android:id="@+id/detailButton"
-        android:layout_width="wrap_content"
+        android:layout_width="88dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
