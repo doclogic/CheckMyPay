@@ -20,7 +20,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 
@@ -321,6 +320,7 @@ public class MainActivity extends AppCompatActivity {
             case entry_edit: editStamp();break;
             case entry_shup: shiftUpStamp();break;
             case action_exit: appExit();break;
+            case action_about: appAbout();break;
             case action_quit: appQuit();break;
             case action_break:
                 simpleToast("Break", 0);
@@ -633,7 +633,7 @@ public class MainActivity extends AppCompatActivity {
         });
         dMode = DM_CHKDET;
     }
-    public void disChkDetail(PCDetail pd) {
+    public void disChkDetail(@NonNull PCDetail pd) {
         TextView vpdText, vpdRate, vpdHrs, vpdAmt;
         vpdText = findViewById(pdText);
         vpdRate = findViewById(pdRate);
@@ -994,6 +994,24 @@ public class MainActivity extends AppCompatActivity {
             simpleToast("fail reset",1);
         }
         disTime();
+    }
+    private void appAbout() {
+        /*        private String curDir = "", curFileDir = "", curObbDir = "", curDataDir = "", curPubDir = ""; */
+        setContentView(R.layout.about);
+        fn_v = findViewById(tVAbout1);
+        fn_v.setText(curDir);
+        fn_v = findViewById(tVAbout2);
+        fn_v.setText(curFileDir);
+        fn_v = findViewById(tVAbout3);
+        fn_v.setText(curObbDir);
+        fn_v = findViewById(tVAbout4);
+        fn_v.setText(curDataDir);
+        fn_v = findViewById(tVAbout5);
+        fn_v.setText(curPubDir);
+    }
+        public void aDoneButton(View view) {
+        if ( slMod ) wrtTime(curFile);
+        disMain();
     }
     private void appExit() {
         wrtGlobal();
