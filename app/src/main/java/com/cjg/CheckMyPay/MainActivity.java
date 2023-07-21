@@ -331,12 +331,12 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    /***MAIN DISPLAY***********************************************************************************/
+    /***MAIN DISPLAY*******************************************************************************/
     public void disMain() {
         setContentView(layout.activity_main);
         new TextClock(this);
     }
-    /***TIME DISPLAY***********************************************************************************/
+    /***TIME DISPLAY*******************************************************************************/
     private void disTime() {
         setContentView(R.layout.time_main);
         new TextClock(this);
@@ -392,7 +392,7 @@ public class MainActivity extends AppCompatActivity {
     public void tDownButton(View view) {
         shiftDownStamp();
     }
-    /***TOTALS DISPLAY*********************************************************************************/
+    /***TOTALS DISPLAY*****************************************************************************/
     private void disTot() {
         setContentView(R.layout.tot_main);
         tlv = findViewById(totLV);
@@ -419,7 +419,7 @@ public class MainActivity extends AppCompatActivity {
         dMode = 0;
         disTime();
     }
-    /***EDIT ENTRY DISPLAY*****************************************************************************/
+    /***EDIT ENTRY DISPLAY*************************************************************************/
     private void disEd() {
         setContentView(layout.edit_main);
         dMode = DM_EDIT;
@@ -437,7 +437,7 @@ public class MainActivity extends AppCompatActivity {
         dMode = DM_TIME;
         disTime();
     }
-    /***EDIT DIVISOR/MULTIPLIER DISPLAY****************************************************************/
+    /***EDIT DIVISOR/MULTIPLIER DISPLAY************************************************************/
     private void disDiv() {
         setContentView(layout.edit_cdiv);
         dMode = DM_DIV;
@@ -448,7 +448,7 @@ public class MainActivity extends AppCompatActivity {
         dMode = DM_TIME;
         disTime();
     }
-    /***JOB CODE DISPLAY*******************************************************************************/
+    /***JOB CODE DISPLAY***************************************************************************/
     private void disJob() {
         setContentView(layout.edit_job);
         jc_v = findViewById(jcView);
@@ -496,7 +496,7 @@ public class MainActivity extends AppCompatActivity {
         dMode = DM_TIME;
         disTime();
     }
-    /***CHECK LIST DISPLAY ****************************************************************************/
+    /***CHECK LIST DISPLAY ************************************************************************/
     private void disChk() {
         setContentView(layout.check_main);
         plv = findViewById(checkList);
@@ -671,7 +671,7 @@ public class MainActivity extends AppCompatActivity {
         dMode= DM_CHK;
         disChk();
     }
-    /***TEXT EDITOR DISPLAY****************************************************************************/
+    /***TEXT EDITOR DISPLAY************************************************************************/
     private void setTxtEd() {
         dMode = DM_TEXT + DM_FILE;
         selectFile("Select file for Text Edit",curFile);
@@ -706,7 +706,7 @@ public class MainActivity extends AppCompatActivity {
         dMode= DM_TIME;
         disTime();
     }
-    /***FILE SELECTION*********************************************************************************/
+    /***FILE SELECTION*****************************************************************************/
     private void selectFile(String prompt, String preload) {//filename.xml Setup view & Adapter
         File tFile;
         setContentView(layout.filename);
@@ -864,7 +864,7 @@ public class MainActivity extends AppCompatActivity {
         fla.notifyDataSetChanged();
         tmpFile.delete();
     }
-    /***MENU INITIATED ACTIONS*************************************************************************/
+    /***MENU INITIATED ACTIONS*********************************************************************/
     public void ExitButton(View view) {
         appExit();
     }
@@ -1027,7 +1027,7 @@ public class MainActivity extends AppCompatActivity {
         setResult(RESULT_OK);
         finish();       //end this activity RETURNS activityResult() *******************************
     }
-    /***FUNCTIONS**************************************************************************************/
+    /***FUNCTIONS**********************************************************************************/
     private void wrtStamp(String sMsg) {
         mit = new lineItem();
         mit.stamp = Calendar.getInstance().getTime();
@@ -1103,7 +1103,7 @@ public class MainActivity extends AppCompatActivity {
         lc = text2int(lCode);
         return cla.find(lc);
     }
-    /***sub-functions**********************************************************************************/
+    /***sub-functions******************************************************************************/
     private void rdGlobal() {
         gloFile = curFileDir + F_SEP +  getString(R.string.f_gloName);
         BufferedReader br;
@@ -1338,7 +1338,7 @@ public class MainActivity extends AppCompatActivity {
         dlgAlert.create().show();
         return answer;
     }
-    /***List Adapters**********************************************************************************/
+    /***List Adapters******************************************************************************/
     public class StampListAdapter extends BaseAdapter {
 
         ArrayList<lineItem> mItems;
